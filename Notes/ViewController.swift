@@ -80,10 +80,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func loadNotes () {
-        let fetchRequest: NSFetchRequest<MyNote> = MyNote.fetchRequest()  //создали запрос на получение данных
+        let fetchRequest: NSFetchRequest<MyNote> = MyNote.fetchRequest()
         
         do {
-            self.model = try context.fetch(fetchRequest) //попробовали получить массив данных из модели
+            self.model = try context.fetch(fetchRequest) 
             self.model.sort(by: {firstNote, secondNote in  
                 if let firstTime = firstNote.time, let secondTime = secondNote.time {
                     return firstTime > secondTime
